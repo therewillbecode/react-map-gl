@@ -32,6 +32,7 @@ import ScatterplotExample from './examples/scatterplot.react';
 import RouteExample from './examples/route.react';
 import StyleDiffingExample from './examples/style-diffing.react';
 import TiltExample from './examples/tilt.react';
+import CanvasExample from './examples/canvas.react';
 
 function getAccessToken() {
   const match = window.location.search.match(/access_token=([^&\/]*)/);
@@ -71,17 +72,18 @@ export default class App extends Component {
     };
     return (
       <div>
-        <TiltExample
+        {/* <TiltExample
           width={ this.state.width - 30 }
           height={ 400 }
-          mapboxApiAccessToken={ getAccessToken() }/>
-        <RouteExample { ...common }/>
+          mapboxApiAccessToken={ getAccessToken() }/> */}
+        <CanvasExample { ...common }/>
+        {/* <RouteExample { ...common }/>
         <ScatterplotExample { ...common }/>
         <ChoroplethExample { ...common }/>
         <CustomExample { ...common }/>
         <GeodataCreator { ...common }/>
         <NotInteractiveExample { ...common }/>
-        <StyleDiffingExample { ...common }/>
+        <StyleDiffingExample { ...common }/> */}
       </div>
     );
   }

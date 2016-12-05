@@ -130,4 +130,3 @@ export default class TiltExample extends Component {
 }
 
 TiltExample.propTypes = PROP_TYPES;
-
