@@ -21,7 +21,7 @@ import React, {PropTypes, Component} from 'react';
 import autobind from 'autobind-decorator';
 import pureRender from 'pure-render-decorator';
 
-import mapboxgl, {Point} from 'mapbox-gl';
+import mapboxgl, {Point, Popup} from 'mapbox-gl';
 import {select} from 'd3-selection';
 import Immutable from 'immutable';
 import assert from 'assert';
@@ -652,6 +652,13 @@ export default class MapGL extends Component {
 
   @autobind _onZoomEnd() {
     this._callOnChangeViewport(this._map.transform, {isDragging: false});
+  }
+
+  @autobind _addPopup(content, closeOnClick=true) {
+    const map = this._map
+    const popup = new Popup({closeOnClick})
+    popup.content = content
+    popup.addTo(map)
   }
 
   render() {
