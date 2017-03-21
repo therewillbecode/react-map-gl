@@ -654,10 +654,10 @@ export default class MapGL extends Component {
     this._callOnChangeViewport(this._map.transform, {isDragging: false});
   }
 
-  @autobind _addPopup(content, closeOnClick=true) {
+  @autobind _addPopup(lng, lat, content, closeOnClick=true) {
     const map = this._map
     const popup = new Popup({closeOnClick})
-    popup.content = content
+    popup.setLngLat([lng, lat]).setHTML(content)
     popup.addTo(map)
   }
 
